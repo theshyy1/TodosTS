@@ -61,8 +61,8 @@ const TodoList = () => {
         return todo;
       }
     });
-    localStorage.setItem("todos", JSON.stringify(todos));
-    setTodos([...newTodos]);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+    setTodos(newTodos);
   };
 
   const deleteTodo = (id: string | number) => {
