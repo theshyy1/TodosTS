@@ -48,8 +48,8 @@ const TodoList = () => {
       isCompleted: false,
       time: timeCreated,
     };
+    localStorage.setItem("todos", JSON.stringify([...todos, newTodo]));
     setTodos([...todos, newTodo]);
-    localStorage.setItem("todos", JSON.stringify(todos));
     return todo;
   };
 
@@ -61,8 +61,8 @@ const TodoList = () => {
         return todo;
       }
     });
-    setTodos([...newTodos]);
     localStorage.setItem("todos", JSON.stringify(todos));
+    setTodos([...newTodos]);
   };
 
   const deleteTodo = (id: string | number) => {
@@ -84,11 +84,11 @@ const TodoList = () => {
         return todo;
       }
     });
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     setTodos([...newTodos]);
-    localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  const handleClick = () => {
+  const handleClickFocus = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -120,7 +120,7 @@ const TodoList = () => {
           ) : (
             <div className="flex justify-between items-center">
               <button
-                onClick={handleClick}
+                onClick={handleClickFocus}
                 className="flex justify-between items-center"
               >
                 Thêm mới

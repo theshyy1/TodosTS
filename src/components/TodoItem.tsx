@@ -30,7 +30,6 @@ const TodoItem = ({ todo, deleteTodo, changeStatus, updateTodo }: IProps) => {
     }
   };
 
-  // Lưu tiêu đề mới và kết thúc chế độ chỉnh sửa
   const saveTitle = () => {
     updateTodo(todo.id, { title: newTitle });
     setIsEditing(false);
@@ -75,7 +74,7 @@ const TodoItem = ({ todo, deleteTodo, changeStatus, updateTodo }: IProps) => {
           </h4>
         )}
 
-        <div className="w-30 text-center px-5">
+        <div className="w-30 text-left px-5">
           {todo.isCompleted ? <p>Hoàn Thành</p> : <p>Chưa hoàn thành</p>}
         </div>
         <div className="w-30 text-center mx-5">

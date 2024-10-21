@@ -17,10 +17,10 @@ const TodoForm = ({ addTodo, inputRef }: IProps) => {
 
   const handleKeyDown = (e: any) => {
     if (e.key === "Enter") {
-      const isDone: string | undefined = addTodo(input);
-      if (!isDone) return;
+      addTodo(input);
       setInput("");
     }
+    return;
   };
   return (
     <div>
@@ -34,7 +34,7 @@ const TodoForm = ({ addTodo, inputRef }: IProps) => {
         ref={inputRef}
       />
       <button className="border rounded p-2" onClick={handleSubmit}>
-        ADD
+        Thêm
       </button>
     </div>
   );
